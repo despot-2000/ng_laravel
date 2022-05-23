@@ -17,3 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+use App\Http\Controllers\EmployeeController;
+
+//get all emp
+Route::get('employees',[EmployeeController::class,'getEmployees']);
+
+//get specific employee
+Route::get('employee/{id}',[EmployeeController::class,'getEmployeeById']);
+
+//add employee
+Route::post('addEmployee',[EmployeeController::class,'addEmployee']);
+
+//update employee
+Route::put('updateEmployee/{id}',[EmployeeController::class,'updateEmployee']);
+
+//delete employee
+Route::delete('deleteEmployee/{id}',[EmployeeController::class,'deleteEmployee']);

@@ -32,7 +32,10 @@
             <td>{{ emp.name }}</td>
             <td>{{ emp.email }}</td>
             <td>{{ emp.salary }}</td>
-            <td><button class="btn btn-danger btn-sm" (click)="deleteData(emp.id)">Delete</button></td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteData(emp.id)">Delete</button>
+                <button class="btn btn-warning btn-sm mx-2" routerLink="edit/{{ emp.id }}">Edit</button>
+            </td>
         </tr>
     </tbody>
 </table>
